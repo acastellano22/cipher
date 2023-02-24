@@ -31,8 +31,7 @@ public class RouteCipher {
     }
 
     public static String encryptMessage(String message) {
-        String phrase = message.substring(0, numRows * numCols);
-        String[] arr = phrase.split("");
+        String[] arr = message.split("");
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
         }
@@ -40,8 +39,8 @@ public class RouteCipher {
     }
 
     public static void main(String[] args) {
-        String[][] letterBlock = new String[3][5];
+        String[][] letterBlock = new String[2][3];
         RouteCipher cipher = new RouteCipher(letterBlock);
-        encryptMessage("hola");
+        encryptMessage("Hello World");
     }
 }
