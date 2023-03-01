@@ -25,34 +25,30 @@ public class RouteCipher {
     }
 
     public static String encryptMessage(String message) {
-        int counter = 0;
-        String concatString = "";
-        while (counter < message.length()) {
-            String[][] block = new String[numRows][numCols];
-            for (int i = 0; i < block.length; i++) {
-                for (int j = 0; j < block[i].length; j++) {
-                    if (counter < message.length()) {
-                        block[i][j] = message.substring(counter, counter + 1);
-                        counter++;
-                    } else {
-                        block[i][j] = "A";
-                    }
-                }
-            }
+        String encryptedMsg = "";
+        String msg = message.substring(0);
+        int endIndex = msg.length() - 1;
+        System.out.println(endIndex);
+        int space = numRows * numCols;
 
-            for (int i = 0; i < block.length; i++) {
-                for (int j = 0; j < block[i].length; j++) {
-                    concatString += block[i][j];
-                }
+        if (message.length() == 0) {
+            return "";
+        } else if (msg.length() <= space) {
+            fillBlock(msg);
+            // encryptedMsg = encryptBlock();
+        } else {
+            while (endIndex != -1) {
+
             }
         }
-        return concatString;
+
+        return encryptedMsg;
     }
 
     public static void main(String[] args) {
         String[][] letterBlock = new String[2][3];
         RouteCipher cipher = new RouteCipher(letterBlock);
 
-        System.out.println(encryptMessage("hello world"));
+        System.out.println(encryptMessage("andrew"));
     }
 }
