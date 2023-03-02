@@ -1,9 +1,9 @@
-public class RouteCipher {
+public class Cipher {
     private String[][] letterBlock;
     private int numRows;
     private int numCols; 
 
-    public RouteCipher (String[][] letterBlock) {
+    public Cipher (String[][] letterBlock) {
         this.letterBlock = letterBlock;
         this.numRows = letterBlock.length;
         this.numCols = letterBlock[0].length;
@@ -57,7 +57,7 @@ public class RouteCipher {
 
     public static void main(String[] args) {
         String[][] block = new String[2][2];
-        RouteCipher cipher = new RouteCipher(block);
-        cipher.fillBlock("hello");
+        Cipher message = new Cipher(block);
+        message.fillBlock("hello");
     }
 }
